@@ -87,6 +87,8 @@
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .point-nav:focus,
 .point-nav:hover {
@@ -104,7 +106,10 @@
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .address:focus,
 .address:hover {
   color: var(--color-link);
@@ -135,6 +140,10 @@
   border-color: #f5f4fa;
   padding: 6px 22px;
   border: none;
+
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter {
@@ -190,6 +199,8 @@ h3 {
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-footer:focus,
 .address-footer:hover {
@@ -214,6 +225,8 @@ h3 {
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Общее для ссылок */
@@ -238,6 +251,10 @@ a {
   line-height: 1.875;
   letter-spacing: 0.06em;
   text-align: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -380,9 +397,33 @@ a {
 
 .list-work li {
   margin-right: 30px;
+  position: relative;
 }
 .list-work li:last-child {
   margin-right: 0px;
+}
+
+.fon-text {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 70px;
+  color: white;
+  bottom: 0;
+  padding: 27px 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.8),
+    rgba(47, 48, 58, 0.8)
+  );
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 
 .team {
@@ -444,14 +485,19 @@ a {
   display: block;
 }
 
+/* Работы в ПОРТФОЛИО */
+
 .element {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
   background: #ffffff;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.element:focus,
 .element:hover {
   background: #ffffff;
   border: 1px solid #eeeeee;
@@ -467,6 +513,60 @@ a {
 .element:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
+
+/* .element-card {
+  position: relative;
+} */
+
+.element-card:hover .overlay::before {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/* .element-card::before */
+.overlay::before {
+  position: absolute;
+  cursor: pointer;
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+.overlay-text p {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  width: 322px;
+  height: 168px;
+  opacity: 0;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.element-card a:hover .overlay-text p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*                      */
 .card {
   padding: 20px 24px;
   margin-top: -5px;
@@ -493,7 +593,7 @@ a {
 .our-team {
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-top: -4px;
+  /* margin-top: -4px; */
 }
 
 .link-menu {
@@ -530,6 +630,9 @@ a {
   fill: var(--color-link);
 }
 
+.list-icon a {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* Иконки преимущества */
 /* .advantage svg {
   width: 270px;
@@ -554,6 +657,9 @@ a {
   border-radius: 4px;
   cursor: pointer;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .firms li + li {
   margin-left: 30px;
@@ -561,12 +667,9 @@ a {
 .clients {
   padding-top: 94px;
 }
-.firms-icon:hover {
-  fill: var(--color-link);
-  border: 1px solid var(--color-link);
-}
 
-.firms-icon:focus {
+.firms-icon:focus,
+.firms-icon:hover {
   fill: var(--color-link);
   border: 1px solid var(--color-link);
 }
@@ -599,16 +702,16 @@ a {
   color: #afb1b8;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-logo {
   fill: currentColor;
 }
 
+.social-link-join:focus,
 .social-link-join:hover {
-  background-color: #2196f3;
-  color: #ffffff;
-}
-.social-link-join:focus {
   background-color: #2196f3;
   color: #ffffff;
 }
@@ -629,10 +732,39 @@ a {
 
 .studio {
   color: var(--color-link);
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.studio::after {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-link);
+  border-radius: 2px;
 }
 
 .portfolio1 {
   color: var(--color-link);
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.portfolio1::after {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-link);
+  border-radius: 2px;
 }
 
 /* Соц. сети */
@@ -654,16 +786,16 @@ a {
   color: #afb1b8;
   background-color: #ffffff;
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-logo-team {
   fill: currentColor;
 }
 
+.social-link:focus,
 .social-link:hover {
-  background-color: #2196f3;
-  color: #ffffff;
-}
-.social-link:focus {
   background-color: #2196f3;
   color: #ffffff;
 }
@@ -689,4 +821,5 @@ a {
 }
 img {
   display: block;
+  width: 100%;
 }
