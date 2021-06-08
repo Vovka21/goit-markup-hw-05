@@ -920,10 +920,12 @@ img {
   margin-top: 20px;
   color: #757575;
 }
+
 .contract a {
   color: var(--color-link);
   text-decoration: underline;
 }
+
 .send {
   height: 50px;
   width: 200px;
@@ -934,6 +936,7 @@ img {
   cursor: pointer;
   margin-top: 30px;
 }
+
 .send:hover,
 .send:focus {
   background-color: #188ce8;
@@ -1029,6 +1032,7 @@ img {
   content: " ";
   display: inline-block;
 }
+
 .icon-checkbox {
   display: inline-block;
   border: 2px solid #212121;
@@ -1037,6 +1041,7 @@ img {
   height: 15px;
   margin-right: 7px;
 }
+
 .checkbox:checked + .icon-checkbox {
   background-image: url(../images/check.svg);
   background-size: contain;
@@ -1044,10 +1049,12 @@ img {
   background-color: var(--color-link);
   border-color: var(--color-link);
 }
+
 .checkbox {
   -webkit-appearance: none;
   position: absolute;
 }
+
 .info textarea::placeholder {
   font-family: Roboto;
   font-size: 12px;
@@ -1058,6 +1065,7 @@ img {
   text-align: left;
   color: #75757580;
 }
+
 label a {
   margin-left: 5px;
 }
@@ -1072,6 +1080,7 @@ label a {
   text-align: left;
   color: white;
 }
+
 .form-sign input {
   border: 1px solid #ffffff4d;
   border-radius: 4px;
@@ -1083,20 +1092,24 @@ label a {
   margin-top: 20px;
   margin-right: 12px;
 }
+
 .form-sign {
   display: flex;
   flex-direction: column;
 }
+
 .spam {
   display: flex;
   align-items: flex-end;
   padding: 72px 0 100px;
 }
-.telegram {
-  margin-left: 10px;
-}
+
 .spam button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.telegram {
+  margin-left: 10px;
 }
