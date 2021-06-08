@@ -141,9 +141,9 @@
   padding: 6px 22px;
   border: none;
 
-  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter {
@@ -686,10 +686,10 @@ a {
 
 .color-footer section {
   display: flex;
+  justify-content: space-between;
 }
 
 .social {
-  margin-left: 70px;
   padding: 72px 0 100px;
 }
 
@@ -836,8 +836,8 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: absolute;
@@ -847,31 +847,23 @@ img {
   width: 528px;
   height: 581px;
   background-color: white;
-  transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* animation: close 250ms linear 1 alternate 0s both,
-    open 2500ms linear 1 alternate 0s both; 
-
-  animation-name: open;
-  animation-duration: 2500ms;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-  animation-delay: 0s;
-  animation-fill-mode: both; */
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024,
+    0px 1px 3px 0px #0000001f;
 }
 
-/* @keyframes open {
-  0% {
-    transform: translatex(-50%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-} */
+.data {
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #212121;
+}
 
 .backdrop.is-hidden {
   visibility: hidden;
@@ -881,9 +873,9 @@ img {
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5);
 }
-.svgx {
+/* .svgx {
   fill: black;
-}
+} */
 
 .button-close {
   position: absolute;
@@ -894,6 +886,216 @@ img {
   background-color: white;
   border: 1px solid #0000001a;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-close:hover,
+.button-close:focus {
+  fill: var(--color-link);
+}
+
+.info {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+.contract {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  margin-top: 20px;
+  color: #757575;
+}
+.contract a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+.send {
+  height: 50px;
+  width: 200px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--color-link);
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.send:hover,
+.send:focus {
+  background-color: #188ce8;
+}
+
+.list-form .info + .info {
+  margin-top: 10px;
+}
+
+.info textarea {
+  resize: none;
+  height: 120px;
+  width: 448px;
+  border-radius: 4px;
+  border: 1px solid #21212133;
+  padding: 12px 16px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.modal form {
+  /* height: 342px; */
+  /* width: 448px; */
+  margin: 12px auto 0px;
+}
+
+.button-send {
+  text-align: center;
+}
+
+.info {
+  /* display: flex;
+  align-items: center; */
+  position: relative;
+}
+
+.info svg {
+  position: absolute;
+  content: "";
+  bottom: 11px;
+  left: 12px;
+  /* display: inline-block; */
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info input {
+  height: 40px;
+  /* width: 448px; */
+  width: 100%;
+  padding-left: 42px;
+  border-radius: 4px;
+  border: 1px solid #21212133;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info input:hover,
+.info textarea:hover {
+  fill: var(--color-link);
+  border: 1px solid var(--color-link);
+  cursor: pointer;
+}
+
+.info input:hover + svg {
+  fill: var(--color-link);
+}
+
+.info:focus-within > svg {
+  fill: var(--color-link);
+}
+
+.info:focus-within > input,
+.info:focus-within > textarea {
+  border: 1px solid var(--color-link);
+  border-radius: 4px;
+  outline: none;
+}
+
+.label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.label-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.label-checkbox::after {
+  content: " ";
+  display: inline-block;
+}
+.icon-checkbox {
+  display: inline-block;
+  border: 2px solid #212121;
+  border-radius: 4px;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+}
+.checkbox:checked + .icon-checkbox {
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+  background-color: var(--color-link);
+  border-color: var(--color-link);
+}
+.checkbox {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.info textarea::placeholder {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #75757580;
+}
+label a {
+  margin-left: 5px;
+}
+
+.sign {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: white;
+}
+.form-sign input {
+  border: 1px solid #ffffff4d;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px #00000026;
+  background-color: #2f303a;
+  padding: 15px 16px;
+  height: 50px;
+  width: 358px;
+  margin-top: 20px;
+  margin-right: 12px;
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+}
+.spam {
+  display: flex;
+  align-items: flex-end;
+  padding: 72px 0 100px;
+}
+.telegram {
+  margin-left: 10px;
+}
+.spam button {
   display: flex;
   align-items: center;
   justify-content: center;
